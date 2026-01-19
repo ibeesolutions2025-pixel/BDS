@@ -7,7 +7,7 @@ const getAiClient = () => {
   
   // Fallback về env variable nếu không có
   if (!apiKey) {
-    apiKey = process.env.API_KEY;
+    apiKey = process.env.GEMINI_API_KEY;
   }
   
   if (!apiKey) {
@@ -17,7 +17,7 @@ const getAiClient = () => {
   return new GoogleGenAI({ apiKey });
 };
 
-// Shared strict negative prompt for image generation
+// Shared strict negative prompt for image generation 
 const STRICT_NEGATIVE_PROMPT = "no text, no writing, no watermark, no logo, no signature, no typography, high quality, photorealistic, 8k, hdr, deformed hands, bad anatomy, close up face, wide shot, full body, standing far away, small figure";
 
 // Townhouse needs full body, so we remove "full body" and "wide shot" from negative prompt
