@@ -118,7 +118,7 @@ export const generateBrandAssets = async (
   }
 
   const response = await ai.models.generateContent({
-    model: "gemini-2.0-flash-exp",
+    model: "gemini-1.5-pro-latest",
     contents: { parts },
     config: {
       systemInstruction,
@@ -195,7 +195,7 @@ export const generateRealEstateMaterials = async (
   });
 
   const response = await ai.models.generateContent({
-    model: "gemini-2.0-flash-exp",
+    model: "gemini-1.5-pro-latest",
     contents: { parts },
     config: {
       systemInstruction,
@@ -278,7 +278,7 @@ export const generateTownhouseMaterials = async (
   });
 
   const response = await ai.models.generateContent({
-    model: "gemini-2.0-flash-exp",
+    model: "gemini-1.5-pro-latest",
     contents: { parts },
     config: {
       systemInstruction,
@@ -460,7 +460,7 @@ export const generateMaterials = async (
      projectImagesBase64.forEach(img => parts.push({ inlineData: { mimeType: "image/png", data: img } }));
   }
   const response = await ai.models.generateContent({
-    model: "gemini-2.0-flash-exp",
+    model: "gemini-1.5-pro-latest",
     contents: { parts },
     config: {
       systemInstruction: instruction,
