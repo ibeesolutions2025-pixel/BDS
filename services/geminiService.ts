@@ -118,7 +118,7 @@ export const generateBrandAssets = async (
   }
 
   const response = await ai.models.generateContent({
-    model: "gemini-1.5-pro-latest",
+    model: "gemini-3-flash-preview",
     contents: { parts },
     config: {
       systemInstruction,
@@ -195,7 +195,7 @@ export const generateRealEstateMaterials = async (
   });
 
   const response = await ai.models.generateContent({
-    model: "gemini-1.5-pro-latest",
+    model: "gemini-3-flash-preview",
     contents: { parts },
     config: {
       systemInstruction,
@@ -278,7 +278,7 @@ export const generateTownhouseMaterials = async (
   });
 
   const response = await ai.models.generateContent({
-    model: "gemini-1.5-pro-latest",
+    model: "gemini-3-flash-preview",
     contents: { parts },
     config: {
       systemInstruction,
@@ -335,7 +335,7 @@ export const regenerateSceneImage = async (
   parts.push({ text: refinedPrompt });
 
   const response = await ai.models.generateContent({
-    model: 'imagen-3.0-generate-001',
+    model: 'gemini-2.5-flash-image',
     contents: { parts },
     config: { imageConfig: { aspectRatio } }
   });
@@ -421,7 +421,7 @@ export const generateCharacterImage = async (
   parts.push({ text: enhancedPrompt });
 
   const response = await ai.models.generateContent({
-    model: 'imagen-3.0-generate-001',
+    model: 'gemini-2.5-flash-image',
     contents: { parts },
     config: { 
       imageConfig: { aspectRatio } 
@@ -460,7 +460,7 @@ export const generateMaterials = async (
      projectImagesBase64.forEach(img => parts.push({ inlineData: { mimeType: "image/png", data: img } }));
   }
   const response = await ai.models.generateContent({
-    model: "gemini-1.5-pro-latest",
+    model: "gemini-3-flash-preview",
     contents: { parts },
     config: {
       systemInstruction: instruction,
